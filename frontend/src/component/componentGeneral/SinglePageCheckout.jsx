@@ -168,8 +168,6 @@ const SinglePageCheckout = ({ product }) => {
         {
           productId: product._id || product.productId,
           quantity: quantity,
-          // CHANGE THIS LINE:
-          // Use variant._id (or the specific ID field your cart store uses)
           variantId: selectedVariant?._id || "Default",
         },
       ],
@@ -434,7 +432,7 @@ const SinglePageCheckout = ({ product }) => {
         addressData={addressData}
         cart={[
           {
-            productId: product._id || product.productId,
+productId: product._id || product.productId,
             name: product.name,
             quantity,
             originalPrice: selectedVariant?.price,

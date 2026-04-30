@@ -68,7 +68,7 @@ const useProductStore = create((set) => ({
 
     try {
       const response = await axios.get(`${apiUrl}/products/${id}`);
-      set({ product: response.data || null, loading: false });
+      set({ product: response.data.data || null, loading: false });
     } catch (error) {
       set({
         error: error.response?.data?.message || "Failed to fetch product",

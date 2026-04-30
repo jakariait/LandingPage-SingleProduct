@@ -42,9 +42,9 @@ const getProducts = async () => {
 /**
  * Get a single product by ID
  */
-const getProductById = async (productId) => {
+const getProductById = async (id) => {
   try {
-    const product = await ProductModel.findOne({ productId }).populate([
+    const product = await ProductModel.findById(id).populate([
       { path: "category", select: "-createdAt -updatedAt" },
       { path: "subCategory", select: "-createdAt -updatedAt" },
       { path: "childCategory", select: "-createdAt -updatedAt" },

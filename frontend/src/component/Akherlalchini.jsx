@@ -3,7 +3,7 @@ import SingleProductDetails from "./componentGeneral/SingleProductDetails.jsx";
 export default function Akherlalchini() {
   return (
     <div>
-      <SingleProductDetails slug={"akher-lal-chini-445"} />
+      <SingleProductDetails id={"699dcb96ae5fab822400a91c"} />
     </div>
   );
 }

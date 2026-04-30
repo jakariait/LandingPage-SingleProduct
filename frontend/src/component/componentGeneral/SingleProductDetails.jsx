@@ -11,22 +11,21 @@ import Footer from "../Footer.jsx";
 import ProductCarousel from "./ProductCarousel.jsx";
 import CountDown from "../CountDown.jsx";
 
-const ProductDetails = ({ slug }) => {
+const ProductDetails = ({ id }) => {
   const hasPushedRef = useRef(false);
 
-  const { fetchProductBySlug, product, loading, error, resetProduct } =
+  const { fetchProductById, product, loading, error, resetProduct } =
     useProductStore();
 
-  const [currentProductSlug, setCurrentProductSlug] = useState(null);
+  const [currentProductId, setCurrentProductId] = useState(null);
 
   useEffect(() => {
-    if (slug !== currentProductSlug) {
-      // Reset product state and show loading
-      resetProduct(); // Clear previous product data
-      setCurrentProductSlug(slug);
-      fetchProductBySlug(slug);
+    if (id !== currentProductId) {
+      resetProduct();
+      setCurrentProductId(id);
+      fetchProductById(id);
     }
-  }, [slug, currentProductSlug, fetchProductBySlug, resetProduct]);
+  }, [id, currentProductId, fetchProductById, resetProduct]);
 
   // Data layer for View Content
   useEffect(() => {
@@ -48,7 +47,7 @@ const ProductDetails = ({ slug }) => {
         value: price,
         items: [
           {
-            item_id: product.productId,
+            item_id: product._id,
             item_name: product.name,
             currency: "BDT",
             discount,

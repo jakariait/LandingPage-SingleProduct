@@ -51,6 +51,9 @@ import AdminListPage from "./pagesAdmin/AdminListPage.jsx";
 import CreateAdminPage from "./pagesAdmin/CreateAdminPage.jsx";
 import EditAdminPage from "./pagesAdmin/EditAdminPage.jsx";
 import PathaoConfigPage from "./pagesAdmin/PathaoConfigPage.jsx";
+import AddNewProductPage from "./pagesAdmin/AddNewProductPage.jsx";
+import AmazfitWatch from "./component/AmazfitWatch.jsx";
+import AmazfitWatchPage from "./pagesUser/AmazfitWatchPage.jsx";
 
 function App() {
   const { GeneralInfoListRequest, GeneralInfoList } = GeneralInfoStore();
@@ -126,6 +129,8 @@ function App() {
         {/* General User Routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/akher-lal-chini" element={<HomePage />} />
+        <Route path="/amazfit-watch" element={<AmazfitWatchPage/>} />
+
         <Route path="/thank-you/:orderId" element={<ThankYouPage />} />
 
         {/*Admin Login Page*/}
@@ -163,10 +168,10 @@ function App() {
           />
 
           {/* Product Routes */}
-          {/*<Route*/}
-          {/*  path="/admin/addnewproduct"*/}
-          {/*  element={<AddNewProductPage />}*/}
-          {/*/>*/}
+          <Route
+            path="/admin/addnewproduct"
+            element={<AddNewProductPage />}
+          />
           <Route
             path="/admin/viewallproducts"
             element={<ViewAllProductPage />}
